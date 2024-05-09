@@ -10,7 +10,6 @@ import org.example.domain.service.impl.DepartmentServiceImpl;
 import org.example.domain.service.impl.JobServiceImpl;
 import org.example.domain.service.impl.LocationServiceImpl;
 import org.example.domain.service.impl.UserServiceImpl;
-import org.postgresql.util.PSQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -66,7 +65,7 @@ public class Controller {
     }
 
     @PostMapping("trabajo")
-    public ResponseEntity crearTrabajo(@RequestBody JobsDto jobsDto) throws PSQLException {
+    public ResponseEntity crearTrabajo(@RequestBody JobsDto jobsDto) {
         jobService.save(jobsDto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

@@ -4,7 +4,6 @@ import org.example.domain.dto.JobsDto;
 import org.example.domain.service.JobService;
 import org.example.persistence.entities.JobsEntity;
 import org.example.persistence.repositories.JobRepository;
-import org.postgresql.util.PSQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +17,7 @@ public class JobServiceImpl implements JobService {
     JobRepository jobRepository;
 
     @Override
-    public void save(JobsDto jobsDto) throws PSQLException {
+    public void save(JobsDto jobsDto) {
         JobsEntity jobsEntity = JobsEntity.builder()
                 .id_departamento(jobsDto.getId_departamento())
                 .id_trabajo(jobsDto.getId_trabajo())
