@@ -138,7 +138,7 @@ public class Controller {
     }
 
     @PutMapping("locacion")
-    public ResponseEntity actualizarLocacion(@RequestBody LocationDto locationDto){
+    public ResponseEntity actualizarLocacion(@RequestParam LocationDto locationDto){
         locationService.update(locationDto);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
